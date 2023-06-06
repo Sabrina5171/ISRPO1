@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище RegistartionModelContainer" CdmEntityContainer="RegistartionEntities">
+    <EntitySetMapping Name="SecretQuestion">
+      <EntityTypeMapping TypeName="RegistartionModel.SecretQuestion">
+        <MappingFragment StoreEntitySet="SecretQuestion">
+          <ScalarProperty Name="CodeSecretQuestion" ColumnName="CodeSecretQuestion" />
+          <ScalarProperty Name="SecretQuestion1" ColumnName="SecretQuestion1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="RegistartionModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="Surname" ColumnName="Surname" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="ACodeword" ColumnName="ACodeword" />
+          <ScalarProperty Name="SecretQuestionAnswer" ColumnName="SecretQuestionAnswer" />
+          <ScalarProperty Name="CodeSecretQuestion1" ColumnName="CodeSecretQuestion1" />
+          <ScalarProperty Name="CodeUser" ColumnName="CodeUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

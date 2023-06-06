@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5f1c6fa16fde4b1c80209e8dcd2e410e" Name="Diagram1">
+        <EntityTypeShape EntityType="RegistartionModel.SecretQuestion" Width="2.5" PointX="6" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="RegistartionModel.User" Width="2.625" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="RegistartionModel.FK_User_SecretQuestion" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище RegistartionModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="SecretQuestion">
+    <Key>
+      <PropertyRef Name="CodeSecretQuestion" />
+    </Key>
+    <Property Name="CodeSecretQuestion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SecretQuestion1" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="CodeUser" />
+    </Key>
+    <Property Name="Surname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ACodeword" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SecretQuestionAnswer" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CodeSecretQuestion1" Type="int" Nullable="false" />
+    <Property Name="CodeUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_SecretQuestion_SecretQuestion">
+    <End Role="SecretQuestion" Type="Self.SecretQuestion" Multiplicity="1" />
+    <End Role="SecretQuestion1" Type="Self.SecretQuestion" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="SecretQuestion">
+        <PropertyRef Name="CodeSecretQuestion" />
+      </Principal>
+      <Dependent Role="SecretQuestion1">
+        <PropertyRef Name="CodeSecretQuestion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_SecretQuestion">
+    <End Role="SecretQuestion" Type="Self.SecretQuestion" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecretQuestion">
+        <PropertyRef Name="CodeSecretQuestion" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="CodeSecretQuestion1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище RegistartionModelContainer">
+    <EntitySet Name="SecretQuestion" EntityType="Self.SecretQuestion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_SecretQuestion_SecretQuestion" Association="Self.FK_SecretQuestion_SecretQuestion">
+      <End Role="SecretQuestion" EntitySet="SecretQuestion" />
+      <End Role="SecretQuestion1" EntitySet="SecretQuestion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_SecretQuestion" Association="Self.FK_User_SecretQuestion">
+      <End Role="SecretQuestion" EntitySet="SecretQuestion" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
